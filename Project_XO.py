@@ -9,6 +9,9 @@ def pole():
 
 def move(gamer):
     while True:
+        if possible_moves == []:
+            print('Игра окончена! Победила дружба! :)')
+            break
         print('Ходит', gamer, '. Введите коррдинаты', possible_moves, ': ')
         n = int(input())
         if n in possible_moves:
@@ -31,9 +34,6 @@ def check_pole():
 print('Добро пожаловать в игру Крестики-Нолики! Давай сыграем!')
 
 while True:
-    if possible_moves == []:
-            print('Игра окончена! Победила дружба! :)')
-            break
     move('X')
     if check_pole():
         print('Поздравляем! Игрок Х победил!')
@@ -42,7 +42,6 @@ while True:
     if check_pole():
         print('Поздравляем! Игрок О победил!')
         break
-
-
-
-
+    if possible_moves == []:
+            print('Спасибо за игру!')
+            break
